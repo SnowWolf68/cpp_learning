@@ -5,10 +5,10 @@ using namespace std;
 void test01(){
 const char* s = "string";
     snow::string str(s);
-    cout << "=====¹¹Ôìº¯Êý========" << endl;
+    cout << "=====æž„é€ å‡½æ•°========" << endl;
     cout << str.c_str() << endl;
 
-    cout << "=====ÖØÔØ[]========" << endl;
+    cout << "=====é‡è½½[]========" << endl;
 
     cout << str[0] << endl;
     str[0] = '1';
@@ -22,7 +22,7 @@ const char* s = "string";
     const snow::string str_const(s);
     cout << str_const[0] << endl;
 
-    cout << "=====µü´úÆ÷========" << endl;
+    cout << "=====è¿­ä»£å™¨========" << endl;
     snow::string::iterator it = str.begin();
     while(it != str.end()){
         cout << *it << " ";
@@ -37,7 +37,7 @@ const char* s = "string";
     }
     cout << endl;
 
-    cout << "=====·¶Î§for========" << endl;     // µ×²ãÓÃµü´úÆ÷ÊµÏÖ, µü´úÆ÷µÄÁ½¸ö½Ó¿Ú±ØÐëÊÇbegin(), end()²ÅÄÜÊµÏÖ
+    cout << "=====èŒƒå›´for========" << endl;     // åº•å±‚ç”¨è¿­ä»£å™¨å®žçŽ°, è¿­ä»£å™¨çš„ä¸¤ä¸ªæŽ¥å£å¿…é¡»æ˜¯begin(), end()æ‰èƒ½å®žçŽ°
     for(auto ch : str){
         cout << ch << " ";
     }
@@ -58,13 +58,13 @@ const char* s = "string";
 
     cout << str.c_str() << endl;
 
-    cout << "=====ÖØÔØ+= ========" << endl;
+    cout << "=====é‡è½½+= ========" << endl;
     str += '#';
     (str += '#')+= '^';
     str += "&&&&";
     cout << str.c_str() << endl;
 
-    cout << "===== ¿Õ´®µÄcapacityÎª0, ÓÐbug ========" << endl;
+    cout << "===== ç©ºä¸²çš„capacityä¸º0, æœ‰bug ========" << endl;
     snow::string str2;
     cout << "capacity: " << str2.capacity() << endl;
     str2.push_back('1');
@@ -112,7 +112,7 @@ void test03(){
 }
 
 void test04() {
-    // g++ÔÊÐíÐÞ¸Ä·Ç·¨Î»ÖÃ, vs2022»á±¨´í
+    // g++å…è®¸ä¿®æ”¹éžæ³•ä½ç½®, vs2022ä¼šæŠ¥é”™
     char s[] = "hello";
     s[5] = '1';
     s[6] = '2';

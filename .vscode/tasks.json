@@ -8,10 +8,16 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 // "${file}",
-                "${workspaceFolder}\\string\\test.cpp",
-                "${workspaceFolder}\\string\\string.cpp",
+                // "${workspaceFolder}\\string\\test.cpp",
+                // "${workspaceFolder}\\string\\string.cpp",
+
+                "${workspaceFolder}\\vector\\test.cpp",
+                // "${workspaceFolder}\\vector\\vector.cpp",
+
                 "-o",
-                "${workspaceFolder}\\string\\test.exe"
+                // "${workspaceFolder}\\string\\test.exe"
+
+                "${workspaceFolder}\\vector\\test.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
