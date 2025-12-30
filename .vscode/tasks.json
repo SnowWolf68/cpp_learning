@@ -11,13 +11,17 @@
                 // "${workspaceFolder}\\string\\test.cpp",
                 // "${workspaceFolder}\\string\\string.cpp",
 
-                "${workspaceFolder}\\vector\\test.cpp",
+                // "${workspaceFolder}\\vector\\test.cpp",
                 // "${workspaceFolder}\\vector\\vector.cpp",
+
+                "${workspaceFolder}\\list\\test.cpp",
 
                 "-o",
                 // "${workspaceFolder}\\string\\test.exe"
 
-                "${workspaceFolder}\\vector\\test.exe"
+                // "${workspaceFolder}\\vector\\test.exe"
+
+                "${workspaceFolder}\\list\\test.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
