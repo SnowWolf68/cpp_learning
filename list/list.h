@@ -14,7 +14,7 @@ namespace snow{
 
 
     // 封装迭代器
-    template <class T>
+    template <class T, class Ref, class Ptr>
     struct __list_iterator{
         typedef list_node<T> Node;
         Node* _node;
@@ -48,12 +48,12 @@ namespace snow{
             return old;
         }
 
-        T& operator*(){
+        Ref operator*(){
             return _node->_data;
         }
 
-        T* operator->(){
-            return &_node->_data;
+        Ptr operator->(){
+            return &(_node->_data);
         }
 
         bool operator!=(const __list_iterator& it){
@@ -65,11 +65,68 @@ namespace snow{
         }
     };
 
+    // template <class T>
+    // struct __list_const_iterator{
+    //     typedef list_node<T> Node;
+    //     Node* _node;
+
+    //     __list_const_iterator(Node* node){
+    //         _node = node;
+    //     }
+
+    //     // 前置++
+    //     __list_const_iterator& operator++(){
+    //         _node = _node->_next;
+    //         return *this;
+    //     }
+
+    //     // 后置++
+    //     // 注意要返回++之前的值
+    //     __list_const_iterator operator++(int){
+    //         __list_const_iterator old = *this;
+    //         _node = _node->_next;
+    //         return old;
+    //     }
+
+    //     __list_const_iterator& operator--(){
+    //         _node = _node->_prev;
+    //         return *this;
+    //     }
+
+    //     __list_const_iterator operator--(int){
+    //         __list_const_iterator old = *this;
+    //         _node = _node->_prev;
+    //         return old;
+    //     }
+
+    //     const T& operator*(){
+    //         return _node->_data;
+    //     }
+
+    //     const T* operator->(){
+    //         return &(_node->_data);
+    //     }
+
+    //     bool operator!=(const __list_const_iterator& it){
+    //         return _node != it._node;
+    //     }
+
+    //     bool operator==(const __list_const_iterator& it){
+    //         return _node == it._node;
+    //     }
+    // };
+
+
     template <class T>
     class list{
     public:
         typedef list_node<T> Node;
-        typedef __list_iterator<T> iterator;
+        // typedef __list_iterator<T> iterator;
+        // typedef __list_const_iterator<T> const_iterator;
+
+        typedef __list_iterator<T, T&, T*> iterator;
+        typedef __list_iterator<T, const T&, const T*> const_iterator;
+
 
         void empty_init(){
             _head = new Node();
@@ -102,6 +159,14 @@ namespace snow{
 
         void pop_back(){
             erase(end()--);
+        }
+
+        const_iterator begin() const {
+            return _head->_next;    // 隐式类型转换
+        }
+
+        const_iterator end() const {
+            return _head;
         }
 
         iterator begin(){
