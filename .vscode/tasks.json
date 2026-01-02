@@ -14,14 +14,16 @@
                 // "${workspaceFolder}\\vector\\test.cpp",
                 // "${workspaceFolder}\\vector\\vector.cpp",
 
-                "${workspaceFolder}\\list\\test.cpp",
+                // "${workspaceFolder}\\list\\test.cpp",
+                "${workspaceFolder}\\stack\\test.cpp",
 
                 "-o",
                 // "${workspaceFolder}\\string\\test.exe"
 
                 // "${workspaceFolder}\\vector\\test.exe"
 
-                "${workspaceFolder}\\list\\test.exe"
+                // "${workspaceFolder}\\list\\test.exe"
+                "${workspaceFolder}\\stack\\test.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
