@@ -1,9 +1,35 @@
+#include "reverse_iterator.h"
+
 namespace snow{
     template<class T>
     class vector{
     public: 
         typedef T* iterator;
         typedef const T* const_iterator;
+
+        typedef __reverse_iterator<iterator, T&, T*> reverse_iterator;
+        typedef __reverse_iterator<const_iterator, const T&, const T*> const_reverse_iterator;
+
+
+        reverse_iterator rbegin() {
+            // return --end();
+            return end() - 1;
+        }
+
+        reverse_iterator rend() {
+            // return --begin();
+            return begin() - 1;
+        }
+
+        const_reverse_iterator rbegin() const {
+            // return --end();
+            return end() - 1;
+        }
+
+        const_reverse_iterator rend() const {
+            // return --begin();
+            return begin() - 1;
+        }
 
         vector()
         {}

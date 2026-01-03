@@ -165,13 +165,35 @@ void test06(){
     print(v2);
 }
 
+void test07(){
+    snow::vector<int> v;
+    v.push_back(1);
+    v.push_back(2);
+    v.push_back(3);
+    v.push_back(4);
+    v.push_back(5);
+
+    // snow::vector<int>::iterator it = v.begin
+
+    snow::vector<int>::reverse_iterator rit = v.rbegin();
+    while(rit != v.rend()){
+        cout << *rit << " ";
+        rit++;
+    }
+    cout << endl;
+
+
+}
+
 int main(){
 
     // test01();
 
     // test02();
 
-    test06();
+    // test06();
+
+    test07();
 
     return 0;
 }
