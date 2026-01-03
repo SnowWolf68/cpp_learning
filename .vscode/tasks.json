@@ -15,7 +15,8 @@
                 // "${workspaceFolder}\\vector\\vector.cpp",
 
                 // "${workspaceFolder}\\list\\test.cpp",
-                "${workspaceFolder}\\stack\\test.cpp",
+                // "${workspaceFolder}\\stack\\test.cpp",
+                "${workspaceFolder}\\reverse_iterator\\test.cpp",
 
                 "-o",
                 // "${workspaceFolder}\\string\\test.exe"
@@ -23,7 +24,8 @@
                 // "${workspaceFolder}\\vector\\test.exe"
 
                 // "${workspaceFolder}\\list\\test.exe"
-                "${workspaceFolder}\\stack\\test.exe"
+                // "${workspaceFolder}\\stack\\test.exe"
+                "${workspaceFolder}\\reverse_iterator\\test.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
