@@ -6,35 +6,56 @@ enum Colour
 	BLACK
 };
 
-template<class K, class V>
+template<class T>
 struct RBTreeNode
 {
-	RBTreeNode<K, V>* _left;
-	RBTreeNode<K, V>* _right;
-	RBTreeNode<K, V>* _parent;
-	pair<K, V> _kv;
+	RBTreeNode<T>* _left;
+	RBTreeNode<T>* _right;
+	RBTreeNode<T>* _parent;
+	T _data;
 	Colour _col;
 
-	RBTreeNode(const pair<K, V>& kv)
+	RBTreeNode(const T& data)
 		:_left(nullptr)
 		, _right(nullptr)
 		, _parent(nullptr)
-		, _kv(kv)
+		, _data(data)
 		, _col(RED)
 	{}
 };
 
+template<class T, class KeyOfT>
+class __tree_iterator{
+	typedef RBTreeNode<T> Node;
+	Node* _node;
 
-template<class K, class V>
+	__tree_iterator(Node* node)
+		:_node(node)
+	{}
+
+	T& operator*(){
+		return this->_node->_data;
+	}
+
+	T* operator->(){
+		return &(_node->_data);
+	}
+
+	
+
+};
+
+
+template<class K, class T, class KeyOfT>
 class RBTree
 {
-	typedef RBTreeNode<K, V> Node;
+	typedef RBTreeNode<T> Node;
 public:
-	bool Insert(const pair<K, V>& kv)
+	bool Insert(const T& data)
 	{
 		if (_root == nullptr)
 		{
-			_root = new Node(kv);
+			_root = new Node(data);
 			_root->_col = BLACK;
 			return true;
 		}
@@ -42,14 +63,16 @@ public:
 		Node* parent = nullptr;
 		Node* cur = _root;
 
+		KeyOfT kot;
+
 		while (cur)
 		{
-			if (cur->_kv.first < kv.first)
+			if (kot(cur->_data) < kot(data))
 			{
 				parent = cur;
 				cur = cur->_right;
 			}
-			else if (cur->_kv.first > kv.first)
+			else if (kot(cur->_data) > kot(data))
 			{
 				parent = cur;
 				cur = cur->_left;
@@ -60,9 +83,9 @@ public:
 			}
 		}
 
-		cur = new Node(kv);
+		cur = new Node(data);
 		cur->_col = RED;
-		if (parent->_kv.first < kv.first)
+		if (kot(parent->_data) < kot(data))
 		{
 			parent->_right = cur;
 			cur->_parent = parent;
