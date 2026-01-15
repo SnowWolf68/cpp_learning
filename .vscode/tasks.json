@@ -7,9 +7,9 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${workspaceFolder}\\list\\test.cpp",
+                "${workspaceFolder}\\AVL\\test.cpp",
                 "-o",
-                "${workspaceFolder}\\list\\test.exe"
+                "${workspaceFolder}\\AVL\\test.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -25,17 +25,17 @@
         },
         {
             "type": "cppbuild",
-            "label": "C/C++: g++ build active file",
-            "command": "/usr/bin/g++",
+            "label": "C/C++: g++.exe build active file",
+            "command": "D:/Tools/CodeBlocks/MinGW/bin/g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "D:/Tools/CodeBlocks/MinGW/bin"
             },
             "problemMatcher": [
                 "$gcc"
