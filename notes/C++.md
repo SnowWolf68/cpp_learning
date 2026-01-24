@@ -61,7 +61,7 @@ int main() {
 
 传值返回会产生临时对象, 并且需要调用两次拷贝构造
 
-<img src="/Users/zhuan/C++_Linux_learning/cpp_learning/notes/img_C++/Snipaste_2026-01-16_14-31-16.png" alt="Snipaste_2026-01-16_14-31-16" style="zoom:80%;" />
+<img src="img_C++/Snipaste_2026-01-16_14-31-16.png" alt="Snipaste_2026-01-16_14-31-16"  />
 
 ###### 临时对象具有常性
 

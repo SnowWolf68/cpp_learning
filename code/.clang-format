@@ -1,0 +1,7 @@
+# .clang-format 文件内容
+BasedOnStyle: LLVM
+IndentWidth: 4           # 缩进宽度（空格数）
+TabWidth: 4              # Tab宽度
+# UseTab: Never            # 从不使用Tab，只用空格
+UseTab: Always      # 总是使用Tab
+# 或 UseTab: ForIndentation # 只对缩进使用Tab
