@@ -1,0 +1,22 @@
+# .clang-format 文件内容
+BasedOnStyle: LLVM
+IndentWidth: 4           # 缩进宽度（空格数）
+TabWidth: 4              # Tab宽度
+# UseTab: Never            # 从不使用Tab，只用空格
+UseTab: Always      # 总是使用Tab
+# 或 UseTab: ForIndentation # 只对缩进使用Tab
+
+
+# 1. 让 public/private 与 class 关键字对齐
+# AccessModifierOffset 的值是相对于“内容缩进”的偏移。
+# 如果 IndentWidth 是 4，将此项设为 -4，public 就会向左移动 4 个空格，从而与 class 对齐。
+AccessModifierOffset: -4
+# 2. 让 class 相对于 namespace 缩进
+# 默认是 None（不缩进），改为 All 会让 namespace 下的所有内容都缩进一个 IndentWidth
+NamespaceIndentation: All
+
+# 强制 template<...> 后必须换行。
+AlwaysBreakTemplateDeclarations: Yes
+
+
+ColumnLimit: 80   # 最大列宽/行宽
